@@ -1,0 +1,17 @@
+#addon-wrapping{
+    width: 30%;
+}
+
+.container{
+    padding-top: 5%;
+    width: 50%;
+}
+
+.botoes{
+    padding: 2%;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+

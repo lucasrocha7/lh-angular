@@ -1,0 +1,60 @@
+<div class="container">
+    <form>
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">ID</span>
+            <input type="text" class="form-control" aria-label="ID" aria-describedby="addon-wrapping" [(ngModel)] = "vaga.id">
+        </div>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Nome</span>
+            <input type="text" class="form-control" aria-label="ID" aria-describedby="addon-wrapping" [(ngModel)] = "vaga.nome">
+        </div>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Foto</span>
+            <input type="text" class="form-control" aria-label="ID" aria-describedby="addon-wrapping" [(ngModel)] = "vaga.foto">
+        </div>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Descrição</span>
+            <input type="text" class="form-control" aria-label="ID" aria-describedby="addon-wrapping" [(ngModel)] = "vaga.descricao">
+        </div>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Salário</span>
+            <input type="text" class="form-control" aria-label="ID" aria-describedby="addon-wrapping" [(ngModel)] = "vaga.salario">
+        </div>
+        <div class="botoes">
+            <div class="btn1">
+                <button type="submit" class="btn btn-primary" (click)="cadastrar()">Cadastrar Vaga</button>
+            </div>
+            <div class="btn2">
+                <button type="submit" class="btn btn-primary"(click)="atualizar(vaga.id)">Atualizar Vaga</button>
+            </div>
+            <div class="btn3">
+                <button type="submit" class="btn btn-primary"(click)="excluir(vaga.id)">Excluir Vaga</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<section class="lista-vagas">
+    <div *ngFor="let vaga of vagas">
+
+        <div class="card" style="width: 18rem;">
+            <img src="assets\img\vagas\{{vaga.foto}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Código da Vaga: {{vaga.id}}</h5>
+              <h5 class="card-title">Vaga: {{vaga.nome}}</h5>
+              <p class="card-text">Descricão da Vaga: {{vaga.descricao}}</p>
+              <p class="card-text">Salário: R$ {{vaga.salario}},00</p>
+
+              <button type="button" (click)="atualizar(vaga.id)">Atualizar Vaga</button>
+                <button type="button" (click)="excluir(vaga.id)">Excluir Vaga</button>
+            </div>
+          </div>
+    
+    </div>
+</section>
